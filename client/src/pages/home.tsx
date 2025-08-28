@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { RotateCcw, ArrowLeft, MessageCircle, Users, Heart } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 interface Category {
   id: string;
@@ -54,7 +55,7 @@ export default function Home() {
 
     // Filter out used questions
     const availableQuestions = categoryQuestions.filter(q => !usedQuestionIds.has(q.id));
-    
+
     // If all questions have been used, reset
     if (availableQuestions.length === 0) {
       setUsedQuestionIds(new Set());
@@ -116,6 +117,10 @@ export default function Home() {
               Conecte-se através de conversas significativas
             </p>
           </div>
+          {/* Theme Toggle Button - added to the header */}
+          <div className="flex justify-end mb-4">
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
@@ -126,7 +131,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold font-heading text-text-primary mb-6 text-center">
               Escolha quem irá responder as perguntas
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               {categories?.map((category) => (
                 <Card 
@@ -166,12 +171,12 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-hover rounded-full flex items-center justify-center mx-auto mb-6">
                   <MessageCircle className="w-10 h-10 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl md:text-3xl font-medium font-sans text-text-primary mb-6 leading-relaxed min-h-[4rem] flex items-center justify-center">
                   {randomQuestionMutation.isPending ? (
                     <div className="flex items-center space-x-2">
@@ -183,7 +188,7 @@ export default function Home() {
                     currentQuestion?.content || "Gerando pergunta..."
                   )}
                 </h3>
-                
+
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Button 
                     onClick={generateNewQuestion}
@@ -193,7 +198,7 @@ export default function Home() {
                     <RotateCcw className="w-5 h-5" />
                     <span>Nova Pergunta</span>
                   </Button>
-                  
+
                   <Button 
                     onClick={goBackToCategories}
                     variant="outline"
@@ -235,7 +240,7 @@ export default function Home() {
                 Perguntas cuidadosamente elaboradas para cada tipo de relacionamento
               </p>
             </Card>
-            
+
             <Card className="p-6">
               <div className="w-12 h-12 bg-primary-light rounded-lg flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="w-6 h-6 text-primary" />
@@ -247,7 +252,7 @@ export default function Home() {
                 Saia do superficial e descubra coisas novas sobre as pessoas queridas
               </p>
             </Card>
-            
+
             <Card className="p-6">
               <div className="w-12 h-12 bg-primary-light rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Heart className="w-6 h-6 text-primary" />
