@@ -494,8 +494,7 @@ function loadRecentGames($games) {
         </div>
     </div>
 
-    <script>
-        // JavaScript functions that remain client-side
+    <script>                                                                // python?
         function startGame(mode) {
             const modeNames = {
                 'familia': 'Modo Família',
@@ -521,7 +520,7 @@ function loadRecentGames($games) {
 
         function logout() {
             if (confirm('Tem certeza que deseja sair?')) {
-                window.location.href = 'logout.php';
+                window.location.href = 'index.php';
             }
         }
 
