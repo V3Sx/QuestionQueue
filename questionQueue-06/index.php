@@ -89,24 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <script>
-        function forgotPassword() {
-            alert('Funcionalidade em desenvolvimento!');
-        }
-
-        // Foco no campo de usuário ao carregar a página
-        document.getElementById('username').focus();
-
-        // Adicionar efeitos de interação nos campos
-        const inputs = document.querySelectorAll('.form-control');
-        inputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.style.transform = 'scale(1.02)';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.style.transform = 'scale(1)';
-            });
-        });
 
         // Permitir login com Enter
         document.getElementById('password').addEventListener('keypress', function(e) {
