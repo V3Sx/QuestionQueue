@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2C2C54 0%, #474787 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-container {
+    background: #474787;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #34ACE0 0%, #706FD3 100%);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.logo p {
+    color: #67C8E3;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px;
+    background: #F7F7F7;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(52, 172, 224, 0.2);
+}
+
+/* Password Toggle Styles */
+.password-toggle {
+    position: relative;
+}
+
+.password-toggle i {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.password-toggle i:hover {
+    color: #333;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px;
+    background: #34ACE0;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background: #67C8E3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 172, 224, 0.4);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link {
+    color: #67C8E3;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #FFFFFF;
+}
+
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.alert-error {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.alert-success {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.alert-warning {
+    background: rgba(241, 196, 15, 0.1);
+    color: #f1c40f;
+    border: 1px solid rgba(241, 196, 15, 0.3);
+}
+
+/* Estilos para a tela de criar conta */
+.criar-container {
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.form-hint {
+    display: block;
+    color: #BDC3C7;
+    font-size: 11px;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-footer p {
+    color: #BDC3C7;
+    font-size: 12px;
+}
+
+.form-footer a {
+    color: #34ACE0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-footer a:hover {
+    color: #67C8E3;
+}
+
+.btn-criar {
+    background: #2ecc71;
+    margin-top: 25px;
+}
+
+.btn-criar:hover {
+    background: #27ae60;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+/* Success Celebration */
+.success-celebration {
+    text-align: center;
+    padding: 20px;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.success-celebration i {
+    font-size: 40px;
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+.success-celebration h3 {
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+.success-celebration p {
+    color: #2ecc71;
+    font-size: 14px;
+}
+
+/* Auth Footer */
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #BDC3C7;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.auth-footer a {
+    color: #34ACE0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: #67C8E3;
+}
+
+/* Password Strength */
+.password-strength {
+    height: 5px;
+    border-radius: 5px;
+    margin-top: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.strength-meter {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.strength-text {
+    font-size: 11px;
+    margin-top: 5px;
+    color: #BDC3C7;
+}
+
+/* Password Requirements */
+.password-requirements {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.password-requirements h3 {
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #BDC3C7;
+}
+
+.requirement i {
+    margin-right: 8px;
+    width: 16px;
+    font-size: 12px;
+}
+
+.requirement.valid {
+    color: #2ecc71;
+}
+
+.requirement.invalid {
+    color: #e74c3c;
+}
+
+/* Scroll personalizado para o container criar */
+.criar-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.criar-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.criar-container::-webkit-scrollbar-thumb {
+    background: rgba(52, 172, 224, 0.3);
+    border-radius: 10px;
+}
+
+.criar-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(52, 172, 224, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 25px;
+    }
+    
+    .logo h1 {
+        font-size: 24px;
+    }
+    
+    .criar-container {
+        max-height: 85vh;
+    }
+}   
